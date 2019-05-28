@@ -40,7 +40,7 @@ from .pythonforward import LocalPortForwarding
 from .utils import is_bytes, is_list_like, is_unicode
 from robot.api import logger
 from urllib.parse import urlparse
-import httplib
+import http.client
 import base64
 
 
@@ -97,7 +97,7 @@ class PythonSSHClient(AbstractSSHClient):
 
         logger.info('proxy_uri=%s' % self.config.proxy_uri)
         url = urlparse(self.config.proxy_uri)
-        http_con = httplib.HTTPConnection(url.hostname, url.port)
+        http_con = http.client.HTTPConnection(url.hostname, url.port)
 
         headers = {}
         if url.username and url.password:
