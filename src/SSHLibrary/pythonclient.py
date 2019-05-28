@@ -39,7 +39,7 @@ from .abstractclient import (AbstractShell, AbstractSFTPClient,
 from .pythonforward import LocalPortForwarding
 from .utils import is_bytes, is_list_like, is_unicode
 from robot.api import logger
-from urlparse import urlparse
+from urllib.parse import urlparse
 import httplib
 import base64
 
